@@ -8,42 +8,60 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'search-page',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../tabs/search-page/search-page.module#SearchPagePageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'chat',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../tabs/chat/chat.module#ChatPageModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'calendar',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../tabs/calendar/calendar.module#CalendarPageModule'
+          }
+        ]
+      },
+      {
+        path: 'notifications',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tabs/notifications/notifications.module#NotificationsPageModule'
+          }
+        ]
+      },
+      {
+        path: 'settings',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tabs/settings/settings.module#SettingsPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/search-page',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/search-page',
     pathMatch: 'full'
   }
 ];
