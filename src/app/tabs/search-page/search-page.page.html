@@ -3,10 +3,55 @@
 </ion-header>
 
 <ion-content color = "primary">
+  <script type="text/javascript">
+  function openFullscreen(elem) {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    }
+
+    else if (elem.mozRequestFullScreen) {
+      /* Firefox */
+      elem.mozRequestFullScreen();
+    }
+
+    else if (elem.webkitRequestFullscreen) {
+      /* Chrome, Safari and Opera */
+      elem.webkitRequestFullscreen();
+    }
+
+    else if (elem.msRequestFullscreen) {
+      /* IE/Edge */
+      elem.msRequestFullscreen();
+    }
+  }
+  document.body.onclick = function(){
+    openFullscreen(document.body);
+  };
+</script>
   <br>
   <div style="clear:both;" class="marcacoes-individuais"><h6>Marcações Pendentes</h6></div>
     
   <div class="scrolling-wrapper">
+          <ion-card>
+            <img src="./../../assets/logo.jpg"/>
+            <div class="card-title">3h restantes</div>
+          </ion-card>
+          <ion-card>
+            <img src="./../../assets/logo.jpg"/>
+            <div class="card-title">3h restantes</div>
+          </ion-card>
+          <ion-card>
+            <img src="./../../assets/logo.jpg"/>
+            <div class="card-title">3h restantes</div>
+          </ion-card>
+          <ion-card>
+            <img src="./../../assets/logo.jpg"/>
+            <div class="card-title">3h restantes</div>
+          </ion-card>
+          <ion-card>
+            <img src="./../../assets/logo.jpg"/>
+            <div class="card-title">3h restantes</div>
+          </ion-card>
         <ion-card>
           <img src="./../../assets/logo.jpg"/>
           <div class="card-title">3 dias restantes</div>
@@ -17,32 +62,12 @@
           </ion-card>
           <ion-card>
             <img src="./../../assets/logo.jpg"/>
-            <div class="card-title">3h restantes</div>
-          </ion-card>
-          <ion-card>
-            <img src="./../../assets/logo.jpg"/>
-            <div class="card-title">3h restantes</div>
-          </ion-card>
-          <ion-card>
-            <img src="./../../assets/logo.jpg"/>
             <div class="card-title">3 dias restantes</div>
-          </ion-card>
-          <ion-card>
-            <img src="./../../assets/logo.jpg"/>
-            <div class="card-title">3h restantes</div>
-          </ion-card>
-          <ion-card>
-            <img src="./../../assets/logo.jpg"/>
-            <div class="card-title">3h restantes</div>
-          </ion-card>
-          <ion-card>
-            <img src="./../../assets/logo.jpg"/>
-            <div class="card-title">3h restantes</div>
           </ion-card>
     </div>
     <br>
 
-  <div class="marcacoes-individuais"><h6>Suas Marcacoes</h6></div>
+  <div class="marcacoes-individuais"><h6>Suas Marcações</h6></div>
   <ion-list style="background-color: #13455E;" color = "primary">
       <ion-item lines = "none" color = "success">
           <ion-label>Segunda-feira,<br>
