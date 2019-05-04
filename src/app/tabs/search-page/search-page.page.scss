@@ -31,11 +31,48 @@
 
   .card{
     background-color: white;
+    width: 40%;
+    margin-left: 10px;
   }
 
   .item-mark{
       border-radius: 25px;
       margin-left: 2px;
       margin-right: 2px;
-
   }
+
+  ion-card {
+      width: 40%;
+      height: 40%;
+      text-align: center;
+  }
+  
+  .card-title {
+      position: absolute;
+      top: 70%;
+      height: 50px;
+      font-size: 1.1em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+      background-color: rgba(10,23,55,0.5);
+    }
+  
+    .scrolling-wrapper {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+    }
+
+    .scrolling-wrapper ion-card {
+      display: inline-block;
+    }
+  
+    ion-chip{
+      background-color: #59ABB3;
+      color: #DFEEF0;
+    }
+
+    ion-item{
+      border-top: 1px solid #59ABB3;
+    }

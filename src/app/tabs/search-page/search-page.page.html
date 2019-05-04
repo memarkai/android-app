@@ -2,45 +2,51 @@
   <img class="header-image" src="./../../assets/markai.png" alt="">
 </ion-header>
 
-<ion-content class="conteudo">
-<br>
-<div class="marcacoes-individuais"><h4>Marcacoes Pendentes</h4></div>
-  <ion-row>
-    <ion-col>
-      <ion-card>
-            <img src="./../../assets/logo.jpg" alt="">
-          <ion-label style="text-align: center">
-              <h6>Clinica A</h6>
-          </ion-label>
-      </ion-card>
-    </ion-col>
-    <ion-col>
+<ion-content color = "primary">
+  <br>
+  <div style="clear:both;" class="marcacoes-individuais"><h6>Marcações Pendentes</h6></div>
+    
+  <div class="scrolling-wrapper">
         <ion-card>
-            <ion-card-header>
-              <img src="./../../assets/logo.jpg" alt="">
-            </ion-card-header>
-            <ion-card-content style="text-align: center">
-                <h6>Clinica A</h6>
-            </ion-card-content>
+          <img src="./../../assets/logo.jpg"/>
+          <div class="card-title">3 dias restantes</div>
         </ion-card>
-    </ion-col>
-    <ion-col>
-      <ion-card>
-          <ion-card-header>
-            <img src="./../../assets/logo.jpg" alt="">
-          </ion-card-header>
-          <ion-card-content style="text-align: center">
-              <h6>Clinica A</h6>
-          </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <div class="marcacoes-individuais"><h4>Suas Marcacoes</h4></div>
-  <ion-list>
-      <ion-item>
+          <ion-card>
+            <img src="./../../assets/logo.jpg"/>
+            <div class="card-title">3 dias restantes</div>
+          </ion-card>
+          <ion-card>
+            <img src="./../../assets/logo.jpg"/>
+            <div class="card-title">3h restantes</div>
+          </ion-card>
+          <ion-card>
+            <img src="./../../assets/logo.jpg"/>
+            <div class="card-title">3h restantes</div>
+          </ion-card>
+          <ion-card>
+            <img src="./../../assets/logo.jpg"/>
+            <div class="card-title">3 dias restantes</div>
+          </ion-card>
+          <ion-card>
+            <img src="./../../assets/logo.jpg"/>
+            <div class="card-title">3h restantes</div>
+          </ion-card>
+          <ion-card>
+            <img src="./../../assets/logo.jpg"/>
+            <div class="card-title">3h restantes</div>
+          </ion-card>
+          <ion-card>
+            <img src="./../../assets/logo.jpg"/>
+            <div class="card-title">3h restantes</div>
+          </ion-card>
+    </div>
+    <br>
+
+  <div class="marcacoes-individuais"><h6>Suas Marcacoes</h6></div>
+  <ion-list style="background-color: #13455E;" color = "primary">
+      <ion-item lines = "none" color = "success">
           <ion-label>Segunda-feira,<br>
           9:00 horas</ion-label>
-          
           <ion-chip (click) = "openModal()">
               <ion-avatar>
                 <img src="https://agenciabrave.com.br/wp-content/uploads/2016/03/logomarca-clinica.jpg">
@@ -48,7 +54,7 @@
               <ion-label>Clínica Hermílio...</ion-label>
           </ion-chip>
         </ion-item>
-        <ion-item>
+        <ion-item lines = "none" color = "success">
             <ion-label>Segunda-feira,<br>
             9:00 horas</ion-label>
             
@@ -59,7 +65,7 @@
                 <ion-label>Clínica Hermílio...</ion-label>
             </ion-chip>
         </ion-item>
-        <ion-item>
+        <ion-item lines = "none" color = "success">
             <ion-label>Segunda-feira,<br>
             9:00 horas</ion-label>
             
