@@ -15,9 +15,9 @@
   }
   
   .header-image{
-    height: 200%;
+    height: 150%;
     display: block;
-    margin: -8% auto;
+    margin: -5% auto;
   }
   
   .conteudo{
@@ -75,4 +75,9 @@
 
     ion-item{
       border-top: 1px solid #59ABB3;
+      margin-top:2px;
+    }
+
+    .item-marks{
+      background-color: #59B365;
     }

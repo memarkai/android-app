@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+
+.tab-header{
+    color: white;
+    height: 10%;
+    background-color: #13455E;
+    box-shadow: 0px !important;
+    border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important;
+ 
+}
+
+.conteudo{
+    box-shadow: 0px !important;
+    border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important;
+}
+
+ion-title{
+    font-family:'Century Gothic','Futura','Didact Gothic',san-serif;
+}
+
+ion-toolbar{
+    border:none;
+}
+
+ion-header{
+    border: none;
+    box-shadow: none;
+}
+
+.profile{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.people{
+    width: 100%;
+    text-align: center;
+}
+
+.info{
+    text-align: center;
+    font-family:'Century Gothic','Futura','Didact Gothic',san-serif;
+}
+
+
+.name-info{
+    font-size: 2em;
+}
+
+ion-content{
+    box-shadow: none !important;
+    border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important;
+}
+
+ion-list{
+    background-color:#13455E;
+    box-shadow: 0px !important;
+    border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important;
+}
+
+
+.data{
+    background-color:#13455E;
+    color: white !important;
+}
+
+.lista-dados{
+    background-color:#13455E;
+}
+
+.input-data{
+    background-color:#13455E;
+}
+
+ion-item{
+    border-bottom:1px solid white;
+}
+
+ion-list > .item:last-child, 
+ion-list > .item-wrapper:last-child .item {
+    border-bottom: none;
+}

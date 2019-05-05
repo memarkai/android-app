@@ -1,9 +1,40 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>settings</ion-title>
+<ion-header no-border lines ="none" class="tab-header">
+  <ion-toolbar color = "primary">  
+      <ion-title lines = "none" style="text-align: center; margin-top:2.5%;"><h2>Configurações</h2></ion-title>
   </ion-toolbar>
-</ion-header>
+  </ion-header>
 
-<ion-content>
+<ion-content lines = "none" no-border class="conteudo" color = "primary">
+  <br>
+  <div class="people">
+      <img class="profile" src="https://oiana.com.br/blog/wp-content/uploads/2017/02/mantendo-a-produtividade-sendo-um-profissional-autonomo.jpeg" alt="">
+  </div>
+  <div class="info">
+      <ion-label class="name-info"><b>Pedro Castro</b></ion-label><br>
+      <ion-label color = "primary" class="city-info">Recife-PE</ion-label>
+  </div>
+  <br>
+  <div class="discover-form">
+    <ion-list style="text-align:center;" lines = "none" class="lista-dados">
 
+      <ion-item style="width:80%; margin:0 auto;" color = "primary">
+        <ion-input class="data" type="text" placeholder="Plano de Saúde"></ion-input>
+      </ion-item>
+      <ion-item style="width:80%; margin:0 auto; padding-top: 10px;" color = "primary">
+        <ion-input class="data" type="text" placeholder="E-mail"></ion-input>
+      </ion-item><br>
+      <ion-item style="width:96%; margin:0 auto;" color = "primary">
+         <ion-label>Distância</ion-label>
+         <ion-range color = "light">
+           <ion-row>
+              <ion-icon range-left small name="sunny"></ion-icon>
+           </ion-row>
+           <ion-row>
+              <ion-icon range-right name="sunny"></ion-icon>
+           </ion-row> 
+        </ion-range>
+      </ion-item>
+    
+    </ion-list>    
+  </div>
 </ion-content>
