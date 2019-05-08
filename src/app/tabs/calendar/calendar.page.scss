@@ -1,0 +1,60 @@
+.tab-header{
+  background-color: #59ABB3;
+  color: white;
+  height: 12%;
+}
+
+.header-image{
+  height: 150%;
+  display: block;
+  margin: -5% auto;
+}
+
+.dias{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.horarios{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.nav-lat {
+    float: left;
+    width: 30%;
+    height: 300px; /* only for demonstration, should be removed */
+    background: #ccc;
+    padding: 20px;
+  }
+  .nave{
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: #f1f1f1;
+    height: 300px;
+  }
+  .conteudo-left{
+    width:15%;
+    height:100%;
+    float:left;
+    background-color: #59ABB3;
+  }
+  .conteudo-right{
+    width:85%;
+    height:100%;
+    float:left;
+    background-color:#59ABB3;
+  }
+.dia{
+  height: 30%;
+  text-align: center;
+  background-color:#59ABB3
+}
+
+.butao_dia{
+  height: 400px;
+
+}
