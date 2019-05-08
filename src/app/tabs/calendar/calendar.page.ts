@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import {Programa} from './Programa'
 
 @Component({
   selector: 'app-calendar',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calendar.page.scss'],
 })
 export class CalendarPage implements OnInit {
-
-  constructor() { }
+  dias: Map<string,Programa[]>
+  
+  constructor(public modalCtrl : ModalController) { }
 
   ngOnInit() {
   }
+
+  public openModal(){
+
+  }  
 
 }
