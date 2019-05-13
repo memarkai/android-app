@@ -6,5 +6,4 @@ export class Programa {
         this.horario = hor
         this.descricao = desc
     }
-
 }
