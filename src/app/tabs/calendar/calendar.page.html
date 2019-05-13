@@ -12,15 +12,15 @@
 <ion-content class="content"
   [scrollEvents]="true"
   >
-  <div ><ion-label class="try" style="color: #13455E"><h1>Calendario</h1></ion-label></div>
+  <div ><ion-label class="labels" style="color:#13455E;"><h1>Calendario</h1></ion-label></div>
 <div>
   <nav>
     <div class="conteudo-left">
-      <ion-list class="try">
-        <nav class="try">
+      <ion-list class="labels">
+        <nav class="zero">
         <ion-card>
           <ion-button size="large" expand="full" fill="outline" class="botao_dia">
-            <ion-label class="try">
+            <ion-label class="labels">
               <h1>5</h1>
               <h3>MAI</h3>
             </ion-label>
@@ -28,7 +28,7 @@
         </ion-card>
         <ion-card>
           <ion-button size="large" expand="full" fill="outline">
-            <ion-label class="try">
+            <ion-label class="labels">
               <h1>6</h1>
               <h3>MAI</h3>
             </ion-label>
@@ -36,7 +36,7 @@
         </ion-card>
         <ion-card>
           <ion-button size="large" expand="full" fill="outline">
-            <ion-label class="try">
+            <ion-label class="labels">
             <h1>7</h1>
             <h3>MAI</h3>
             </ion-label>
@@ -44,28 +44,28 @@
         </ion-card>
         <ion-card>
           <ion-button size="large" expand="full" fill="outline">
-            <ion-label class="try">
+            <ion-label class="labels">
               <h1>8</h1>
               <h3>MAI</h3>
             </ion-label></ion-button>
         </ion-card>
         <ion-card>
           <ion-button size="large" expand="full" fill="outline">
-            <ion-label class="try">
+            <ion-label class="labels">
               <h1>9</h1>
               <h3>MAI</h3>
             </ion-label></ion-button>
         </ion-card>
         <ion-card>
           <ion-button size="large" expand="full" fill="outline">            
-            <ion-label class="try">
+            <ion-label class="labels">
               <h1>10</h1>
               <h3>MAI</h3>
             </ion-label></ion-button>
         </ion-card>
         <ion-card>
           <ion-button size="large" expand="full" fill="outline">            
-            <ion-label class="try">
+            <ion-label class="labels">
               <h1>11</h1>
               <h3>MAI</h3>
             </ion-label></ion-button>
@@ -75,49 +75,35 @@
     </div>
   
     <div class="conteudo-right">
-      <ion-list inset="true" lines="inset" class="dia" style="color: #13455E;">
-          <ion-list-header>
-              <ion-label><h2 style="color: #13455E">Horarios</h2></ion-label>
-            </ion-list-header>
-            <nav>
-                <ion-label>
+        <ion-list inset="true" lines="inset" class="dia" style="background-color: #59ABB3;" color="primary">
+            <ion-list-header>
+                <ion-label><h1 style="color: #13455E">Horarios</h1></ion-label>
+              </ion-list-header>
               <ion-item class="dia" lines="none">
-                <ion-card color="primary" class="programas">
-                  <ion-card-header>
-                    <ion-card-subtitle>08:00 - 09:00</ion-card-subtitle>
-                    <ion-card-title>Algum Acontecimento</ion-card-title>
-                    <ion-badge slot="end" color="primary">0</ion-badge>
-                  </ion-card-header>
-                </ion-card>
-              </ion-item>
-            </ion-label>
-              <ion-item class="dia" lines="none">
-                  <ion-card color="primary" class="programas">
-                      <ion-card-header>
-                        <ion-card-subtitle>08:00 - 09:00</ion-card-subtitle>
-                        <ion-card-title>Algum Acontecimento</ion-card-title>
-                        <ion-badge slot="end" color="primary">0</ion-badge>
-                      </ion-card-header>
-                    </ion-card>
+                <ion-label class="labels"><h1 style="margin-bottom: 1.5%">Algum Acontecimento</h1>
+                  <h4>08:00 - 09:00</h4></ion-label>
               </ion-item>
               <ion-item class="dia" lines="none">
-                  <ion-card color="primary" class="programas">
-                      <ion-card-header>
-                        <ion-card-subtitle>08:00 - 09:00</ion-card-subtitle>
-                        <ion-card-title>Algum Acontecimento</ion-card-title>
-                        <ion-badge slot="end" color="primary">0</ion-badge>
-                      </ion-card-header>
-                      
-                    </ion-card>
+                <ion-label class="labels"><h4>08:00 - 09:00</h4>
+                  <h1 style="margin-bottom: 1.5%">Algum Acontecimento</h1></ion-label>
               </ion-item>
               <ion-item class="dia" lines="none">
-                <ion-label class="try"><h4>Ola</h4><h1>Ola2</h1></ion-label>
+                <ion-label class="labels"><h4>08:00 - 09:00</h4>
+                  <h1 style="margin-bottom: 1.5%">Algum Acontecimento</h1></ion-label>
               </ion-item>
               <ion-item class="dia" lines="none">
-                <ion-label class="try"><h4>again</h4><h1>gainga2</h1></ion-label>
+                <ion-label class="labels"><h4>08:00 - 09:00</h4>
+                  <h1 style="margin-bottom: 1.5%">Algum Acontecimento</h1></ion-label>
               </ion-item>
-
-            </nav>
+              <ion-item class="dia" lines="none">
+                <ion-label class="labels"><h4>08:00 - 09:00</h4>
+                  <h1 style="margin-bottom: 1.5%">Algum Acontecimento</h1></ion-label>
+              </ion-item>
+              <ion-item class="dia" lines="none">
+                <ion-label class="labels"><h4>08:00 - 09:00</h4>
+                  <h1 style="margin-bottom: 1.5%">Algum Acontecimento</h1></ion-label>
+              </ion-item>
+        
       </ion-list>
     </div>
   </nav>
