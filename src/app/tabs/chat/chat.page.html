@@ -4,13 +4,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="content-stable"
-                 on-swipe-left="hideTime = false"
-                 on-swipe-right="hideTime = true">
+<ion-content index='messagesContent' padding [scrollEvents]="true"
+                class="content-stable"
+                on-swipe-left="hideTime = false"
+                on-swipe-right="hideTime = true">
 
-      <div *ngFor="let message of messages"
-            [ngClass]="{'other' : message.userId == 1}"
-           class="messages other">
+      <div *ngFor="let message of messages" 
+      [class]="message['userId'] == myId ? 'message' : 'messages other'"
+      >
 
         <div class="message" [ngClass]="{'slide-right': hideTime, '': !hideTime}">
           <span>{{ message.text }}</span>
@@ -28,13 +29,14 @@
     <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
   </label> -->
   <ion-toolbar>
-    <ion-input type="text" class="item-input-wrapper input-message" placeholder="Escreva a sua mensagem..."></ion-input>
-    <!-- <button class="button button-clear" ng-click="sendMessage()">
+    <div><ion-input type="text" class="item-input-wrapper input-message" placeholder="Escreva a sua mensagem..." [(ngModel)]="message"></ion-input></div>
+    <div><ion-button class="button button-clear" (click)="sendMessage(); scrollToBottom()">
       Send
-    </button> -->
+    </ion-button></div>
   
     <!-- <button class="button button-clear">
-      Enviar
+      Enviar[ngClass]="{'other' : message.userId == 1}"
+           class="messages other">
     </button> -->
   </ion-toolbar>
 </ion-footer>
