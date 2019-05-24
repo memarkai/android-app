@@ -14,8 +14,9 @@ export interface Mensagem{
 
 export class ChatPage implements OnInit {
 
-  private myId:Number = 1;
+  myId:Number = 1;
   private messages:Object[] = [];
+  message: string = "";
 
   constructor() { }
 
@@ -43,6 +44,19 @@ export class ChatPage implements OnInit {
     this.messages.push(mensagem1);
     this.messages.push(mensagem2);
   
+  }
+
+  sendMessage(){
+    if(this.message == ""){
+
+    }else{
+      var msg:Object = new Object()
+      msg["text"] = this.message
+      msg['userId'] = this.myId;
+      msg['time'] = '18:30'
+      this.messages.push(msg);
+    }
+
   }
 
 }
