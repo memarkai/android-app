@@ -10,15 +10,18 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 
-// .weekview-allday-table{
-//     display: none;
-//     margin-top: 0px;
-//     height: 0px;
-// }
+.weekview-allday-table{
+    margin-top: 0px;
+    height: 30px !important;
+    border: none !important;
+    margin-bottom: 20px !important;
+    color:black !important;
     
-// .weekview-normal-event-container{
-//     margin-top: 0px;
-// }
+}
+    
+.weekview-normal-event-container{
+    margin-top: 0px;
+}
 // .dayview-allday-table{
 //     display: none;
 // }

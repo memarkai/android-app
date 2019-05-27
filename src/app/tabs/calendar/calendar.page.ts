@@ -32,7 +32,7 @@ export class CalendarPage implements OnInit {
     currentDate: new Date(),
     locale: 'pt-BR',
     noEventsLabel: 'Nenhum Evento',
-    allDayLabel:'fixo'
+    allDayLabel:'FIXO'
   };
  
   @ViewChild(CalendarComponent) myCal: CalendarComponent;
