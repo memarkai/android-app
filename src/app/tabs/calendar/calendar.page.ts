@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, MenuController } from '@ionic/angular';
 import {Programa} from './Programa'
 
 @Component({
@@ -10,9 +10,12 @@ import {Programa} from './Programa'
 export class CalendarPage implements OnInit {
   dias: Map<string,Programa[]>
   
-  constructor(public modalCtrl : ModalController) { }
+  constructor(private menu: MenuController) { 
+    menu.enable(true, 'first');
+  }
 
   ngOnInit() {
+    this.menu.enable(true, 'first');
   }
 
   public openModal(){
