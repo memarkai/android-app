@@ -20,3 +20,12 @@
 .weekview-normal-event-container{
 margin-top: 37px;
 }
+
+#schedule-title {
+  display: inline-block;
+  position: relative;
+  width:100%;
+  text-align: center;
+  font-size:28px;
+  color: var(--ion-color-tertiary);
+}
