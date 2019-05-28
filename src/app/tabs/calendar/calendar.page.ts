@@ -100,6 +100,8 @@ today() {
 // Selected date reange and hence title changed
 onViewTitleChanged(title) {
   this.viewTitle = title;
+  var el = document.getElementById("schedule-title");
+  el.innerHTML = title;
 }
  
 // Calendar event was clicked
