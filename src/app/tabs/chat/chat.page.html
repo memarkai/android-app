@@ -1,5 +1,5 @@
 <ion-header no-border lines ="none" class="tab-header">
-  <ion-toolbar color = "primary">  
+  <ion-toolbar color = "tertiary">  
       <ion-title lines = "none" style="text-align: center; margin-top:2.5%;"><h2>Chat</h2></ion-title>
   </ion-toolbar>
 </ion-header>
@@ -30,7 +30,7 @@
   </label> -->
   <ion-toolbar>
     <div>
-        <ion-button class="button button-clear" (click)="sendMessage(); scrollToBottom()" style="position:absolute;right:5px;">
+        <ion-button class="button button-clear send-btn" (click)="sendMessage(); scrollToBottom()">
             <ion-icon class="icon-tab" name="send"></ion-icon>
           </ion-button>
       <ion-input type="text" class="item-input-wrapper input-message" placeholder="Escreva a sua mensagem..." [(ngModel)]="message"></ion-input>
