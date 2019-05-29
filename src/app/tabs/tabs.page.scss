@@ -1,11 +1,12 @@
 .tab-bar{
-    background-color:#59ABB3;
+    background-color:var(--ion-color-tertiary);
 }
 .tab-item{
-    background-color:#59ABB3;
+    background-color:var(--ion-color-tertiary);
 }
 .icon-tab{
     color: white;
+    font-size:34px;
 }
 .test-content{
     background-color: #59ABB3;

@@ -27,6 +27,7 @@
     "bootstrap": "^4.3.1",
     "cordova-android": "8.0.0",
     "core-js": "^2.5.4",
+    "ionic2-calendar": "^0.5.2",
     "mobiscroll": "^3.0.0-beta6",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",

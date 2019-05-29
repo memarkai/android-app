@@ -1,60 +1,31 @@
 .tab-header{
-  background-color: #59ABB3;
+  background-color:var(--ion-color-tertiary); 
   color: white;
   height: 12%;
 }
 
-.header-image{
-  height: 150%;
-  display: block;
-  margin: -5% auto;
+.card-calendar{
+  text-align: center; 
+  margin:0; 
+  background-color: var(--ion-color-primary);
+  border-radius: 0;
+  border: rgba(0,0,0,0) solid 1px;
+  height: 60px;
 }
 
-.dias{
-  content: "";
-  display: table;
-  clear: both;
+.weekview-allday-table{
+  display: none;
+}
+  
+.weekview-normal-event-container{
+margin-top: 37px;
 }
 
-.horarios{
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.nav-lat {
-    float: left;
-    width: 30%;
-    height: 300px; /* only for demonstration, should be removed */
-    background: #ccc;
-    padding: 20px;
-  }
-  .nave{
-    float: left;
-    padding: 20px;
-    width: 70%;
-    background-color: #f1f1f1;
-    height: 300px;
-  }
-  .conteudo-left{
-    width:15%;
-    height:100%;
-    float:left;
-    background-color: #59ABB3;
-  }
-  .conteudo-right{
-    width:85%;
-    height:100%;
-    float:left;
-    background-color:#59ABB3;
-  }
-.dia{
-  height: 30%;
+#schedule-title {
+  display: inline-block;
+  position: relative;
+  width:100%;
   text-align: center;
-  background-color:#59ABB3
-}
-
-.butao_dia{
-  height: 400px;
-
+  font-size:24px;
+  color: var(--ion-color-tertiary);
 }

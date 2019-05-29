@@ -101,3 +101,9 @@ span {
     width: 300px;
     max-height: 500px;
 }
+
+.send-btn {
+  position:absolute;
+  right:5px;
+  color: var(--ion-color-tertiary);
+}
