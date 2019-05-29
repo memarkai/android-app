@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { getComponentViewByIndex } from '@angular/core/src/render3/util';
+import { getViewComponent } from '@angular/core/src/render3/discovery_utils';
 
 export interface Mensagem{
   userId:number,
@@ -13,6 +16,8 @@ export interface Mensagem{
 })
 
 export class ChatPage implements OnInit {
+
+  @ViewChild('ion-content') content:any;
 
   myId:Number = 1;
   private messages:Object[] = [];
@@ -48,15 +53,19 @@ export class ChatPage implements OnInit {
 
   sendMessage(){
     if(this.message == ""){
-
     }else{
       var msg:Object = new Object()
       msg["text"] = this.message
       msg['userId'] = this.myId;
       msg['time'] = '18:30'
       this.messages.push(msg);
+      
     }
-
   }
+  input(){
+    document.getElementById("messagesContent").scrollToBottom();
+    this.message = "";
+  }
+
 
 }

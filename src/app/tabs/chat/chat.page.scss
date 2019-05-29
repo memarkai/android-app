@@ -18,7 +18,7 @@ $stable:                          #f8f8f8 !default;
   -ms-flex-align: center !important;
   align-items: center !important;
   margin-bottom: 20px !important;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 10px;
   .message {
     -webkit-box-flex: 1 !important;
@@ -37,6 +37,7 @@ $stable:                          #f8f8f8 !default;
   }
 }
 .time {
+  font-size: 15px;
   -webkit-box-flex: 0 !important;
   -moz-box-flex: 0 !important;
   -webkit-flex: 0 1 auto !important;
