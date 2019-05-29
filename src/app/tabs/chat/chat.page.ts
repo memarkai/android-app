@@ -63,7 +63,7 @@ export class ChatPage implements OnInit {
     }
   }
   input(){
-    document.getElementById("messagesContent").scrollToBottom();
+   document.getElementById("messagesContent").scrollToBottom();
     this.message = "";
   }
 
