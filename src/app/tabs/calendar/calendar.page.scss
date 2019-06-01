@@ -34,3 +34,21 @@ margin-top: 37px;
   color:var(--ion-color-primary);
   background-color:var(--ion-color-tertiary);
 }
+
+.addEvent_header_btn {
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#addEventCard {
+  background-color: var(--ion-color-primary);
+  position: absolute;
+  top: 60px;
+  left:0px;
+  right:0px;
+  z-index:100;
+  visibility: hidden;
+}
