@@ -3,6 +3,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { getComponentViewByIndex } from '@angular/core/src/render3/util';
 import { getViewComponent } from '@angular/core/src/render3/discovery_utils';
 
+declare function scrollToBottom(): any;
+
 export interface Mensagem{
   userId:number,
   text:string,
@@ -63,7 +65,7 @@ export class ChatPage implements OnInit {
     }
   }
   input(){
-   //document.getElementById("messagesContent").scrollToBottom();
+    scrollToBottom();
     this.message = "";
   }
 

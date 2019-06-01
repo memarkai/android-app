@@ -42,7 +42,9 @@
                 "input": "node_modules/bootstrap/dist/css/bootstrap.min.css"
               }
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/chat.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
