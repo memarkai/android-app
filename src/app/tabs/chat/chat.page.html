@@ -4,20 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content index='messagesContent' padding [scrollEvents]="true"
+<ion-content id="messagesContent" index='messagesContent' padding [scrollEvents]="true"
                 class="content-stable"
                 on-swipe-left="hideTime = false"
                 on-swipe-right="hideTime = true">
 
       <div *ngFor="let message of messages" 
-      [class]="message['userId'] == myId ? 'message' : 'message other'"
+      [class]="message['userId'] == myId ? 'messageBlock other' : 'messageBlock'"
       >
 
         <div class="message" [ngClass]="{'slide-right': hideTime, '': !hideTime}">
-          <span>{{ message.text }}</span>
+          <div class="text">{{ message.text }}</div>
+          <div [class]="message['userId'] == myId ? 'time other' : 'time'" [ngClass]="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
         </div>
 
-        <div class="time" [ngClass]="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
 
 
       </div>
