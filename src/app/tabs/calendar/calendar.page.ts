@@ -8,6 +8,8 @@ import { registerLocaleData } from '@angular/common';
 registerLocaleData(localePtBr);
 
 
+declare function initCalendarJS(): any;
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.page.html',
@@ -41,6 +43,7 @@ export class CalendarPage implements OnInit {
  
   ngOnInit() {
     this.resetEvent();
+    initCalendarJS();
   }
  
   resetEvent() {

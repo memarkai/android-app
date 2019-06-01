@@ -43,7 +43,8 @@
               }
             ],
             "scripts": [
-              "src/assets/js/chat.js"
+              "src/assets/js/chat.js",
+              "src/assets/js/calendar.js"
             ],
             "es5BrowserSupport": true
           },
