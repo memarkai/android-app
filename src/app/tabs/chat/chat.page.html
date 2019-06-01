@@ -10,7 +10,7 @@
                 on-swipe-right="hideTime = true">
 
       <div *ngFor="let message of messages" 
-      [class]="message['userId'] == myId ? 'message' : 'messages other'"
+      [class]="message['userId'] == myId ? 'message' : 'message other'"
       >
 
         <div class="message" [ngClass]="{'slide-right': hideTime, '': !hideTime}">

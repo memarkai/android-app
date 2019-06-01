@@ -20,21 +20,7 @@ $stable:                          #f8f8f8 !default;
   margin-bottom: 20px !important;
   margin-top: 10px;
   margin-left: 10px;
-  .message {
-    -webkit-box-flex: 1 !important;
-    -moz-box-flex: 1 !important;
-    -webkit-flex: 1 1 auto !important;
-    -ms-flex: 1 1 auto !important;
-    flex: 1 1 auto !important;
-    padding: 10px !important;
-    -webkit-transition: all 250ms ease-in-out !important;
-    transition: all 250ms ease-in-out !important;
-    overflow: hidden !important;
-    text-align: left !important;
-    -webkit-transform: translate3d(0, 0, 0) !important;
-    -moz-transform: translate3d(0, 0, 0) !important;
-    transform: translate3d(0, 0, 0) !important;
-  }
+  
 }
 .time {
   font-size: 15px;
@@ -62,25 +48,7 @@ $stable:                          #f8f8f8 !default;
 }
 //This will change
 
-.messages .other .message {
-    -webkit-transform: translate3d(0, 0, 0) !important;
-    -moz-transform: translate3d(0, 0, 0) !important;
-    transform: translate3d(0, 0, 0) !important;
-    text-align: right !important;
-}
-
-.messages .other .message .slide-right {
-    -webkit-transform: translate3d(120px, 0, 0) !important;
-    -moz-transform: translate3d(120px, 0, 0) !important;
-    transform: translate3d(120px, 0, 0) !important;
-}
-
-.messages .other span {
-    color: black !important;
-    background-color: #C7C7CC !important;
-}
-
-span {
+div.message > span {
   background: #007AFF !important;
   display: inline-block !important;
   color: white !important;
