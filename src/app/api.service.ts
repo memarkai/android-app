@@ -21,12 +21,34 @@ export class ApiService {
     return this.http.post(this.url + "/create/patient",paciente);
   }
 
+  getHeader(){
+    var token:String;
+    this.storage.get('token').then((data) => {
+      token = data;
+    }).catch(err => {
+      token = null;
+    })
+    ;
+
+    return new HttpHeaders({ 
+    
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    
+    });
+
+  }
+
   login(user){
-    return this.http.post(this.url + "/login/", user, {responseType: 'text'}).toPromise()
+    return this.http.post(this.url + "/login/", user, {
+      responseType: 'text'}
+    ).toPromise()
     .then(data => {
       this.storage.set('token', data);
     }) 
   }
+
+
   
 
 }
