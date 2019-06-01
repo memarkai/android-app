@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule, ModalController } from '@ionic/angular';
 import { SearchPagePage } from './search-page.page';
+import { ApiService } from 'src/app/api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 const routes: Routes = [
   {
@@ -17,9 +20,18 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    HttpModule,
+    HttpClientModule
   ],
-  declarations: [SearchPagePage]
+  declarations: [SearchPagePage],
+  providers:[ApiService]
 })
+
 export class SearchPagePageModule {
+
+  constructor(){
+
+  }
+
 }
