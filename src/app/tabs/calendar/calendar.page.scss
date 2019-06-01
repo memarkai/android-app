@@ -52,4 +52,22 @@ margin-top: 37px;
   right:0px;
   z-index:100;
   visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.ion-calendar-content {
+  transition: opacity 0.3s;
+}
+
+@keyframes show {
+  0% {visibility: hidden; opacity: 0;}
+  1% {visibility: visible; opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes hide {
+  0% {visibility: visible; opacity: 1;}
+  99% {opacity: 0;}
+  100% {visibility: hidden; opacity: 0;}
 }

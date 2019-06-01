@@ -55,13 +55,23 @@ export class CalendarPage implements OnInit {
   }
  
   addEventHeaderBtnClick() {
-    if (document.getElementById("addEventCard").style.visibility == "visible") {
+    if (document.getElementById("addEventCard").style.opacity == "1") {
+      document.getElementById("addEventCard").style.animationName = "hide";
+      document.getElementById("addEventCard").style.animationDuration = "0.3s";
       document.getElementById("addEventCard").style.visibility = "hidden";
-      document.getElementsByTagName("ion-content")[0].style.visibility = "visible";
+      document.getElementById("addEventCard").style.opacity = "0";
+
+
+      // document.getElementsByTagName("ion-content")[0].style.visibility = "visible";
       document.getElementsByClassName("addEvent_header_btn")[0].style = "transform:rotate(0deg);";
     } else {
+      document.getElementById("addEventCard").style.animationName = "show";
+      document.getElementById("addEventCard").style.animationDuration = "0.3s";
       document.getElementById("addEventCard").style.visibility = "visible";
-      document.getElementsByTagName("ion-content")[0].style.visibility = "hidden";
+      document.getElementById("addEventCard").style.opacity = "1";
+
+
+      // document.getElementsByTagName("ion-content")[0].style.visibility = "hidden";
       document.getElementsByClassName("addEvent_header_btn")[0].style = "transform:rotate(45deg);";
     }
   }
