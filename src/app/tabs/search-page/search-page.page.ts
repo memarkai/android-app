@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-search-page',
@@ -8,9 +9,18 @@ import { ModalController } from '@ionic/angular';
 })
 export class SearchPagePage implements OnInit {
 
-  constructor(public modalCtrl : ModalController) { }
+  private token:String;
+
+  constructor(
+    public modalCtrl : ModalController,
+    private api: ApiService) { }
 
   ngOnInit() {
+    var pacient:Object = new Object();
+    pacient["email"] = "sudo-user@markai.com";
+    pacient["password"] = "YQBMXYBT";
+
+   this.api.login(pacient);
   }
 
   public openModal(){
