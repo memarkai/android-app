@@ -36,11 +36,12 @@ margin-top: 37px;
 }
 
 .addEvent_header_btn {
-  height: 32px;
-  width: 32px;
+  height: 42px;
+  width: 42px;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 14px;
+  right: 14px;
+  transition: transform 0.3s;
 }
 
 #addEventCard {

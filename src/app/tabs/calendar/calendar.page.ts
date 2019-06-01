@@ -41,6 +41,7 @@ export class CalendarPage implements OnInit {
  
   ngOnInit() {
     this.resetEvent();
+    document.getElementsByClassName("addEvent_header_btn")[0].onclick = this.addEventHeaderBtnClick;
   }
  
   resetEvent() {
@@ -53,6 +54,18 @@ export class CalendarPage implements OnInit {
     };
   }
  
+  addEventHeaderBtnClick() {
+    if (document.getElementById("addEventCard").style.visibility == "visible") {
+      document.getElementById("addEventCard").style.visibility = "hidden";
+      document.getElementsByTagName("ion-content")[0].style.visibility = "visible";
+      document.getElementsByClassName("addEvent_header_btn")[0].style = "transform:rotate(0deg);";
+    } else {
+      document.getElementById("addEventCard").style.visibility = "visible";
+      document.getElementsByTagName("ion-content")[0].style.visibility = "hidden";
+      document.getElementsByClassName("addEvent_header_btn")[0].style = "transform:rotate(45deg);";
+    }
+  }
+
   // Create the right event format and reload source
   addEvent() {
     let eventCopy = {
