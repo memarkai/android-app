@@ -21,6 +21,9 @@ export class SearchPagePage implements OnInit {
     pacient["password"] = "YQBMXYBT";
 
    this.api.login(pacient);
+   this.api.getClinics().then(data => {
+     console.log(data);
+   })
   }
 
   public openModal(){

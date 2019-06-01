@@ -25,16 +25,14 @@ export class ApiService {
     var token:String;
     this.storage.get('token').then((data) => {
       token = data;
+      console.log(data);
     }).catch(err => {
       token = null;
     })
     ;
 
     return new HttpHeaders({ 
-    
-      'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
-    
     });
 
   }
@@ -46,6 +44,14 @@ export class ApiService {
     .then(data => {
       this.storage.set('token', data);
     }) 
+  }
+
+  getClinics(){
+    return this.http.post(this.url + "/clinics/list/", 
+    {
+      headers:this.getHeader()
+    }).
+    toPromise() 
   }
 
 
