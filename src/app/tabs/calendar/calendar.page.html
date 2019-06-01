@@ -62,31 +62,33 @@
 </ion-content>
 
 <!-- Card for adding a new event -->
-<ion-card id="addEventCard">
-  <ion-card-header tappable>
-    <ion-card-title>Adicionar Horário livre</ion-card-title>
-  </ion-card-header>
-  <ion-card-content *ngIf="!collapseCard">
+<div id="addEventPopup">
+  <ion-card id="addEventCard">
+    <ion-card-header tappable>
+      <ion-card-title>Adicionar Horário livre</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="!collapseCard">
 
-    <ion-item>
-      <ion-input type="text" placeholder="Título" [(ngModel)]="event.title"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" placeholder="Descrição" [(ngModel)]="event.desc"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Início</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
-    </ion-item>
-    <ion-item>
-      <ion-label>Fim</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
-    </ion-item>
-    <ion-item>
-      <ion-label>Todos os dias?</ion-label>
-      <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
-    </ion-item><br>
-    <ion-button fill="outline" expand="block" (click)="addEvent()" [disabled]="event.title == ''" class="addEvent_btn">Adicionar Evento</ion-button>
+      <ion-item>
+        <ion-input type="text" placeholder="Título" [(ngModel)]="event.title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Descrição" [(ngModel)]="event.desc"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Início</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Fim</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Todos os dias?</ion-label>
+        <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
+      </ion-item><br>
+      <ion-button fill="outline" expand="block" (click)="addEvent()" [disabled]="event.title == ''" class="addEvent_btn">Adicionar Evento</ion-button>
 
-  </ion-card-content>
-</ion-card>
+    </ion-card-content>
+  </ion-card>
+</div>
