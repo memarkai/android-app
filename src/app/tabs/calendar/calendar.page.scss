@@ -46,12 +46,17 @@ margin-top: 37px;
 
 #addEventCard {
   background-color: var(--ion-color-primary);
+  margin: 0px;
+  position:relative;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
 }
 
 #addEventPopup {
   position: absolute;
   top: 60px;
-  margin-top: 10px;
+  padding: 10px;
   bottom: 0px;
   left:0px;
   right:0px;
@@ -59,7 +64,7 @@ margin-top: 37px;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.8);
 }
 
 .ion-calendar-content {
