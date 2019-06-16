@@ -71,7 +71,16 @@ div.bigButton {
 div.disabled {
   opacity: 0.4;
 }
-
+div.backButton {
+  top:1%;
+  left:1%;
+  position: absolute;
+  z-index:10000;
+  zoom: 3;
+}
+div.screen > h1 {
+  padding-top:3%;
+}
 
   </style>
 
@@ -79,11 +88,6 @@ div.disabled {
   
   var screens = [];
   var screenId = 0;
-
-  function setScreens() {
-    console.log("setScreens");
-    screens = document.getElementsByClassName("tutorial")[0].getElementsByClassName("screen");
-  }
 
   function nextScreen() {
     console.log("nextScreen");
@@ -97,6 +101,29 @@ div.disabled {
     }
   }
 
+  function previousScreen() {
+    console.log("previousScreen");
+    if (screenId > 0) {
+      screens[screenId].classList.remove("stayVisible");
+      screens[screenId].classList.add("stayHidden");
+      screenId--;
+      console.log("previousScreen inner " + screenId + " of " + screens.length);
+      screens[screenId].classList.remove("stayHidden");
+      screens[screenId].classList.add("stayVisible");
+    }
+    if (screenId == 0) {
+      getElementsByClassName("backButton")[0].style.hidden = "hidden";
+    } else {
+      getElementsByClassName("backButton")[0].style.hidden = "visible";
+    }
+  }
+
+  function setScreens() {
+    console.log("setScreens");
+    screens = document.getElementsByClassName("tutorial")[0].getElementsByClassName("screen");
+    previousScreen();
+  }
+
   </script>
 
   <!-- add to homescreen for ios -->
@@ -108,6 +135,7 @@ div.disabled {
   <app-root></app-root>
   <div class="tutorial">
     tutorial
+    <div class="backButton" onclick="previousScreen()"><ion-icon name="arrow-back"></ion-icon></div>
     <div class="screen intro_ location stayVisible">
       <h1>Localização</h1>
       <img class="bigIcon" src="assets/icon/Location.png"/>
