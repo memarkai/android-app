@@ -68,6 +68,9 @@ div.bigButton {
   display: inline-table;
   position:absolute;
 }
+div.disabled {
+  opacity: 0.4;
+}
 
 
   </style>
@@ -79,7 +82,7 @@ div.bigButton {
 
   function setScreens() {
     console.log("setScreens");
-    screens = document.getElementsByClassName("tutorial")[0].getElementsByClassName("intro_");
+    screens = document.getElementsByClassName("tutorial")[0].getElementsByClassName("screen");
   }
 
   function nextScreen() {
@@ -105,7 +108,7 @@ div.bigButton {
   <app-root></app-root>
   <div class="tutorial">
     tutorial
-    <div class="intro_ location stayVisible">
+    <div class="screen intro_ location stayVisible">
       <h1>Localização</h1>
       <img class="bigIcon" src="assets/icon/Location.png"/>
       <h3>Escolha a localização aproximada de onde você quer realizar a consulta. Não se esqueça de verificar a distância de busca.</h3>
@@ -113,10 +116,15 @@ div.bigButton {
         <a class="bigButton" href="javascript:nextScreen()">Vamos lá!</a>
       </div>
     </div>
-    <div class="main_ location">
-      main location
+    <div class="screen main_ location">
+      <h1>Localização</h1>
+      <div class="maps"></div>
+      <h3>Escolha a localização aproximada de onde você quer realizar a consulta.</h3>
+      <div class="bigButton">
+          <a class="bigButton" href="javascript:nextScreen()">Pronto!</a>
+        </div>
     </div>
-    <div class="intro_ speciality">
+    <div class="screen intro_ speciality">
       <h1>Especialidade</h1>
       <img class="bigIcon" src="assets/icon/Estetoscopio.png"/>
       <h3>Escolha a especialidade que você quer realizar a consulta. Falta só mais uma coisa, tá quase!</h3>
@@ -124,10 +132,15 @@ div.bigButton {
         <a class="bigButton" href="javascript:nextScreen()">Vamos lá!</a>
       </div>
     </div>
-    <div class="main_ speciality">
-      main speciality
+    <div class="screen main_ speciality">
+        <h1>Especialidade</h1>
+        <img class="bigIcon" src="assets/icon/Estetoscopio.png"/>
+        <h3>Escolha a especialidade que você quer realizar a consulta. Falta só mais uma coisa, tá quase!</h3>
+        <div class="bigButton">
+          <a class="bigButton" href="javascript:nextScreen()">Pronto</a>
+        </div>
     </div>
-    <div class="intro_ calendar">
+    <div class="screen intro_ calendar">
       <h1>Especialidade</h1>
       <img class="bigIcon" src="assets/icon/Calendar.png"/>
       <h3>Defina os horários em que você está disponível para as próximas consultas. Você poderá modificar depois, fique tranquilo!</h3>
@@ -135,7 +148,7 @@ div.bigButton {
         <a class="bigButton" href="javascript:nextScreen()">Vamos lá!</a>
       </div>
     </div>
-    <div class="main_ calendar">
+    <div class="screen main_ calendar">
       main calendar
     </div>
   </div>
