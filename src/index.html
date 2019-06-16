@@ -22,11 +22,16 @@
     top: 0px;
     left: 0px;
     position: absolute;
+    text-align: center;
     z-index: 1000;
-    display: flex;
+    display: inline-block;
     color: #FFF;
     visibility: visible;
     opacity: 1;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+div.intro_ > h3 {
+  padding:5%;
 }
 
 div.intro_, div.main_ {
@@ -37,7 +42,59 @@ div.stayVisible {
   visibility: visible;
 }
 
+div.stayHidden {
+  visibility: hidden;
+}
+img.bigIcon {
+  align-content: center;
+  width: 200px;
+  height: 200px;
+}
+
+a.bigButton, a.bigButton:hover, a.bigButton:active, a.bigButton:focus {
+  background-color: #FFF;
+  color: #000000;
+  padding: 20px;
+  border-radius: 12px;
+  height: 40px;
+  font-size: 30px;
+  text-decoration:none;
+  font-weight: bold;
+}
+div.bigButton {
+  bottom:10%;
+  left:50%;
+  transform: translateX(-50%);
+  display: inline-table;
+  position:absolute;
+}
+
+
   </style>
+
+  <script>
+  
+  var screens = [];
+  var screenId = 0;
+
+  function setScreens() {
+    console.log("setScreens");
+    screens = document.getElementsByClassName("tutorial")[0].getElementsByClassName("intro_");
+  }
+
+  function nextScreen() {
+    console.log("nextScreen");
+    if (screenId + 1 < screens.length) {
+      screens[screenId].classList.remove("stayVisible");
+      screens[screenId].classList.add("stayHidden");
+      screenId++;
+      console.log("nextScreen inner " + screenId + " of " + screens.length);
+      screens[screenId].classList.remove("stayHidden");
+      screens[screenId].classList.add("stayVisible");
+    }
+  }
+
+  </script>
 
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,24 +106,32 @@ div.stayVisible {
   <div class="tutorial">
     tutorial
     <div class="intro_ location stayVisible">
-      intro location
+      <h1>Localização</h1>
+      <img class="bigIcon" src="assets/icon/Location.png"/>
+      <h3>Escolha a localização aproximada de onde você quer realizar a consulta. Não se esqueça de verificar a distância de busca.</h3>
+      <div class="bigButton">
+        <a class="bigButton" href="javascript:nextScreen()">Vamos lá!</a>
+      </div>
     </div>
     <div class="main_ location">
       main location
     </div>
     <div class="intro_ speciality">
       intro speciality
+      <img class="bigIcon" src="assets/icon/Estetoscopio.png"/>
     </div>
     <div class="main_ speciality">
       main speciality
     </div>
     <div class="intro_ calendar">
       intro calendar
+      <img class="bigIcon" src="assets/icon/Calendar.png"/>
     </div>
     <div class="main_ calendar">
       main calendar
     </div>
   </div>
+  <script>setScreens();</script>
 </body>
 
 </html>
