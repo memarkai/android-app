@@ -12,6 +12,32 @@
   <meta name="msapplication-tap-highlight" content="no" />
 
   <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+  <link rel="stylesheet" type="txt/css" href="theme/tutorial.css"/>
+  <style>
+  
+  div.tutorial, div.intro_, div.main_ {
+    background-color: var(--ion-color-secondary);
+    width:100%;
+    height:100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    color: #FFF;
+    visibility: visible;
+    opacity: 1;
+}
+
+div.intro_, div.main_ {
+    visibility: hidden;
+}
+
+div.stayVisible {
+  visibility: visible;
+}
+
+  </style>
 
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -20,6 +46,27 @@
 
 <body>
   <app-root></app-root>
+  <div class="tutorial">
+    tutorial
+    <div class="intro_ location stayVisible">
+      intro location
+    </div>
+    <div class="main_ location">
+      main location
+    </div>
+    <div class="intro_ speciality">
+      intro speciality
+    </div>
+    <div class="main_ speciality">
+      main speciality
+    </div>
+    <div class="intro_ calendar">
+      intro calendar
+    </div>
+    <div class="main_ calendar">
+      main calendar
+    </div>
+  </div>
 </body>
 
 </html>
