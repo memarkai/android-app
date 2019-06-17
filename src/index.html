@@ -68,6 +68,29 @@ div.bigButton {
   display: inline-table;
   position:absolute;
 }
+
+div.specialityButton {
+  background-color: #FFF;
+  color: #000000;
+  padding: 5px;
+  margin:5px;
+  border-radius: 12px;
+  height: 40px;
+  font-size: 30px;
+  width: 90%;
+  text-align: left;
+  text-decoration:none;
+  font-weight: bold;
+  display: inline-table;
+}
+
+div.specialityButton > img.icon {
+  position: relative;
+  display:inline;
+  width: 64px;
+  height: 64px;
+}
+
 div.disabled {
   opacity: 0.4;
 }
@@ -103,15 +126,21 @@ form > div.icon {
     z-index: 1;
 }
 
+#searchResults {
+  width:100%;
+}
+
   </style>
 
   <script>
   
   var screens = [];
-  var specialities = ["Otorrino", "Dentista"];
-  var specialitiesImages = ["assets/icon/Dente.png","assets/icon/Dente.png"];
+  var specialities = [{name:"Dentista", icon: "assets/icon/Dente.png"},
+  {name:"Ginecologista", icon: "assets/icon/Estetoscopio.png"},
+  {name:"Otorrino", icon: "assets/icon/Estetoscopio.png"}];
   var selectedSpecialities = [false, true];
   var screenId = 0;
+  var searchResults;
 
   function nextScreen() {
     console.log("nextScreen");
@@ -136,9 +165,9 @@ form > div.icon {
       screens[screenId].classList.add("stayVisible");
     }
     if (screenId == 0) {
-      getElementsByClassName("backButton")[0].style.hidden = "hidden";
+      document.getElementsByClassName("backButton")[0].style.hidden = "hidden";
     } else {
-      getElementsByClassName("backButton")[0].style.hidden = "visible";
+      document.getElementsByClassName("backButton")[0].style.hidden = "visible";
     }
   }
 
@@ -146,6 +175,35 @@ form > div.icon {
     console.log("setScreens");
     screens = document.getElementsByClassName("tutorial")[0].getElementsByClassName("screen");
     previousScreen();
+  }
+
+  function searchSpeciality() {
+    var query = document.getElementById("specialityField").value.toLowerCase();
+    document.getElementById("specialityConfirm").classList.add("disabled");
+    if (query.length == 0) {
+      document.getElementById("searchResults").innerHTML = "";
+      document.getElementById("specialityEstetoscopio").style.visibility = "inherit";
+      document.getElementById("specialityTip").style.visibility = "inherit";
+      return;
+    }
+    var speList = [];
+    for (var i = 0; i < specialities.length; i++) {
+      var ii = specialities[i].name.toLowerCase().indexOf(query);
+      if (ii > -1) {
+        speList.push(specialities[i]);
+      }
+    }
+    var innerHTML = "";
+    if (speList.length) {
+      for(var i=0;i<speList.length;i++) {
+        innerHTML += "<div class=\"specialityButton\"><img class=\"icon\" src=\"" + speList[i].icon + "\"/>" + speList[i].name + "</div>";
+      }
+      document.getElementById("specialityConfirm").classList.remove("disabled");
+    } else innerHTML = "<h3>Não achamos a especialidade. Verifique a escrita e tente novamente. :/</h3>";
+    document.getElementById("searchResults").innerHTML = innerHTML;
+    document.getElementById("specialityEstetoscopio").style.visibility = "hidden";
+    document.getElementById("specialityTip").style.visibility = "hidden";
+
   }
 
   </script>
@@ -186,10 +244,11 @@ form > div.icon {
     </div>
     <div class="screen main_ speciality">
         <h1>Especialidade</h1>
-        <form><div class="icon"><ion-icon name="search"></ion-icon></div><input class="searchSpeciality" id="specialityField" type="text" placeholder="Otorrino, Dentista, ..."/></form>
-        <img class="bigIcon" src="assets/icon/Estetoscopio.png" style="opacity:0.4;"/>
-        <h3>Escolha a especialidade que você quer realizar a consulta. Falta só mais uma coisa, tá quase!</h3>
-        <div class="bigButton">
+        <form action="javascript:void;" autocomplete="off"><div class="icon"><ion-icon name="search"></ion-icon></div><input class="searchSpeciality" id="specialityField" type="text" placeholder="Otorrino, Dentista, ..." oninput="searchSpeciality()"/></form>
+        <div id="searchResults"></div>
+        <img id="specialityEstetoscopio" class="bigIcon" src="assets/icon/Estetoscopio.png" style="opacity:0.4;"/>
+        <h3 id="specialityTip">Escolha a especialidade que você quer realizar a consulta. Falta só mais uma coisa, tá quase!</h3>
+        <div id="specialityConfirm" class="bigButton">
           <a class="bigButton" href="javascript:void;">Pronto!</a>
         </div>
     </div>
