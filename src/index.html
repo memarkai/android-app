@@ -30,7 +30,7 @@
     opacity: 1;
     font-family: Arial, Helvetica, sans-serif;   
 }
-div.intro_ > h3 {
+div.screen > h3 {
   padding:5%;
 }
 
@@ -82,11 +82,35 @@ div.screen > h1 {
   padding-top:3%;
 }
 
+input.searchSpeciality {
+  border-radius: 12px;
+  background-color: #FFF;
+  color: #000;
+  width: 90%;
+  height: 30px;
+  font-size: 20px;
+  padding-left: 30px;
+  left:-12px;
+  position: relative;
+}
+form > div.icon {
+    zoom: 1.5;
+    display:inline;
+    left: 12px;
+    top: 4px;
+    position: relative;
+    color:gray;
+    z-index: 1;
+}
+
   </style>
 
   <script>
   
   var screens = [];
+  var specialities = ["Otorrino", "Dentista"];
+  var specialitiesImages = ["assets/icon/Dente.png","assets/icon/Dente.png"];
+  var selectedSpecialities = [false, true];
   var screenId = 0;
 
   function nextScreen() {
@@ -162,10 +186,11 @@ div.screen > h1 {
     </div>
     <div class="screen main_ speciality">
         <h1>Especialidade</h1>
-        <img class="bigIcon" src="assets/icon/Estetoscopio.png"/>
+        <form><div class="icon"><ion-icon name="search"></ion-icon></div><input class="searchSpeciality" id="specialityField" type="text" placeholder="Otorrino, Dentista, ..."/></form>
+        <img class="bigIcon" src="assets/icon/Estetoscopio.png" style="opacity:0.4;"/>
         <h3>Escolha a especialidade que você quer realizar a consulta. Falta só mais uma coisa, tá quase!</h3>
         <div class="bigButton">
-          <a class="bigButton" href="javascript:nextScreen()">Pronto</a>
+          <a class="bigButton" href="javascript:void;">Pronto!</a>
         </div>
     </div>
     <div class="screen intro_ calendar">
