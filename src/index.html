@@ -152,6 +152,7 @@ form > div.icon {
       screens[screenId].classList.remove("stayHidden");
       screens[screenId].classList.add("stayVisible");
     }
+    document.getElementsByClassName("backButton")[0].style.visibility = "visible";
   }
 
   function previousScreen() {
@@ -165,9 +166,9 @@ form > div.icon {
       screens[screenId].classList.add("stayVisible");
     }
     if (screenId == 0) {
-      document.getElementsByClassName("backButton")[0].style.hidden = "hidden";
+      document.getElementsByClassName("backButton")[0].style.visibility = "hidden";
     } else {
-      document.getElementsByClassName("backButton")[0].style.hidden = "visible";
+      document.getElementsByClassName("backButton")[0].style.visibility = "visible";
     }
   }
 
