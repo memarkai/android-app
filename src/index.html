@@ -252,6 +252,7 @@ div.maps {
     <div class="screen main_ location">
       <h1>Localização</h1>
       <div class="maps"><div id="map"></div>
+      <script src="assets/maps.apikey"></script>
       <script>
         var map, infoWindow;
         function initMap() {
@@ -293,8 +294,10 @@ div.maps {
         }
       </script>
       <script>
-        var nodeString = "<script src=\"https://maps.googleapis.com/maps/api/js?key="+THE_GOOGLE_MAPS_API+"&callback=initMap\" async defer><\/script>";
-        document.append(nodeString);
+        var srcURL = "https://maps.googleapis.com/maps/api/js?key="+THE_GOOGLE_MAPS_API_KEY+"&callback=initMap";
+        var loaderScript = document.createElement("script");
+        loaderScript.src = srcURL;
+        document.body.append(loaderScript);
       </script>
     </div>
       <h3>Escolha a localização aproximada de onde você quer realizar a consulta.</h3>
