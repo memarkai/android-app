@@ -153,92 +153,9 @@ div.maps {
     padding: 0;
   }
 </style>
-  <script>
-    
-    var screens = [];
-    var specialities = [];
-    var selectedSpecialities = [false, true];
-    var screenId = 0;
-  var searchResults;
-  
-  function nextScreen() {
-    console.log("nextScreen");
-    if (screenId + 1 < screens.length) {
-      screens[screenId].classList.remove("stayVisible");
-      screens[screenId].classList.add("stayHidden");
-      screenId++;
-      console.log("nextScreen inner " + screenId + " of " + screens.length);
-      screens[screenId].classList.remove("stayHidden");
-      screens[screenId].classList.add("stayVisible");
-    }
-    document.getElementsByClassName("backButton")[0].style.visibility = "visible";
-  }
-
-  function previousScreen() {
-    console.log("previousScreen");
-    if (screenId > 0) {
-      screens[screenId].classList.remove("stayVisible");
-      screens[screenId].classList.add("stayHidden");
-      screenId--;
-      console.log("previousScreen inner " + screenId + " of " + screens.length);
-      screens[screenId].classList.remove("stayHidden");
-      screens[screenId].classList.add("stayVisible");
-    }
-    if (screenId == 0) {
-      document.getElementsByClassName("backButton")[0].style.visibility = "hidden";
-    } else {
-      document.getElementsByClassName("backButton")[0].style.visibility = "visible";
-    }
-  }
-  
-  function setScreens() {
-    console.log("setScreens");
-    screens = document.getElementsByClassName("tutorial")[0].getElementsByClassName("screen");
-    previousScreen();
-  }
-  
-  function searchSpeciality() {
-    var query = document.getElementById("specialityField").value.toLowerCase();
-    document.getElementById("specialityConfirm").classList.add("disabled");
-    if (query.length == 0) {
-      document.getElementById("searchResults").innerHTML = "";
-      document.getElementById("specialityEstetoscopio").style.visibility = "inherit";
-      document.getElementById("specialityTip").style.visibility = "inherit";
-      return;
-    }
-    var speList = [];
-    for (var i = 0; i < specialities.length; i++) {
-      var found = false;
-      // Search occurence of query on name
-      var ii = specialities[i].name.toLowerCase().indexOf(query);
-      if (ii > -1) found = true;
-      // Search occurence of query on keywords
-      for (var j = 0; j < specialities[i].keywords.length; j++) {
-        var jj = specialities[i].keywords[j].toLowerCase().indexOf(query);
-        if (jj > -1) found = true;
-      }
-      if (found) {
-        speList.push(specialities[i]);
-      }
-    }
-    var innerHTML = "";
-    if (speList.length) {
-      for(var i=0;i<speList.length;i++) {
-        innerHTML += "<div class=\"specialityButton\"><img class=\"icon\" src=\"" + speList[i].icon + "\"/>" + speList[i].name + "<div class=\"selector\"></div></div>";
-      }
-      document.getElementById("specialityConfirm").classList.remove("disabled");
-      // everything is alright from here
-      
-      // until here
-    } else innerHTML = "<h3>Não achamos a especialidade. Verifique a escrita e tente novamente. :/</h3>";
-    document.getElementById("searchResults").innerHTML = innerHTML;
-    document.getElementById("specialityEstetoscopio").style.visibility = "hidden";
-    document.getElementById("specialityTip").style.visibility = "hidden";
-    
-  }
-  
-  </script>
+  <script src="assets/js/tutorial.js"></script>
   <script src="/assets/js/specialities.js"></script>
+  <script src="/assets/js/specialityScreen.js"></script>
 
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
