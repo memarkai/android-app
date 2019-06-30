@@ -157,9 +157,9 @@ div.maps {
   <script>
   
   var screens = [];
-  var specialities = [{name:"Dentista", icon: "assets/icon/Dente.png"},
-  {name:"Ginecologista", icon: "assets/icon/Estetoscopio.png"},
-  {name:"Otorrino", icon: "assets/icon/Estetoscopio.png"}];
+  var specialities = [{name:"Odontologista", keywords:["Dente", "Boca", "Dentista", "Odonto", "Odontologia", "Odontologista"], icon: "assets/icon/Dente.png"},
+  {name:"Ginecologista", keywords:["Ginecologista", "Ginecologia"], icon: "assets/icon/Estetoscopio.png"},
+  {name:"Otorrino", keywords:["Ouvido", "Otorrino"], icon: "assets/icon/Estetoscopio.png"}];
   var selectedSpecialities = [false, true];
   var screenId = 0;
   var searchResults;
@@ -211,17 +211,28 @@ div.maps {
     }
     var speList = [];
     for (var i = 0; i < specialities.length; i++) {
+      var found = false;
+      // Search occurence of query on name
       var ii = specialities[i].name.toLowerCase().indexOf(query);
-      if (ii > -1) {
+      if (ii > -1) found = true;
+      // Search occurence of query on keywords
+      for (var j = 0; j < specialities[i].keywords.length; j++) {
+        var jj = specialities[i].keywords[j].toLowerCase().indexOf(query);
+        if (jj > -1) found = true;
+      }
+      if (found) {
         speList.push(specialities[i]);
       }
     }
     var innerHTML = "";
     if (speList.length) {
       for(var i=0;i<speList.length;i++) {
-        innerHTML += "<div class=\"specialityButton\"><img class=\"icon\" src=\"" + speList[i].icon + "\"/>" + speList[i].name + "</div>";
+        innerHTML += "<div class=\"specialityButton\"><img class=\"icon\" src=\"" + speList[i].icon + "\"/>" + speList[i].name + "<div class=\"selector\"></div></div>";
       }
       document.getElementById("specialityConfirm").classList.remove("disabled");
+      // everything is alright from here
+
+      // until here
     } else innerHTML = "<h3>Não achamos a especialidade. Verifique a escrita e tente novamente. :/</h3>";
     document.getElementById("searchResults").innerHTML = innerHTML;
     document.getElementById("specialityEstetoscopio").style.visibility = "hidden";
@@ -319,7 +330,7 @@ div.maps {
         <div id="searchResults"></div>
         <img id="specialityEstetoscopio" class="bigIcon" src="assets/icon/Estetoscopio.png" style="opacity:0.4;"/>
         <h3 id="specialityTip">Escolha a especialidade que você quer realizar a consulta. Falta só mais uma coisa, tá quase!</h3>
-        <div id="specialityConfirm" class="bigButton">
+        <div id="specialityConfirm" class="bigButton disabled">
           <a class="bigButton" href="javascript:void;">Pronto!</a>
         </div>
     </div>
