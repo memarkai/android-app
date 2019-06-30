@@ -14,11 +14,11 @@ export class ApiService {
 
   constructor(
     private http: HttpClient,
-    private storage: Storage) { 
+    private storage: Storage) {
   }
 
   cadastro(paciente){
-    return this.http.post(this.url + "/create/patient",paciente);
+    return this.http.post(this.url + "/create/patient", paciente);
   }
 
   login(user){
@@ -27,6 +27,28 @@ export class ApiService {
       this.storage.set('token', data);
     }) 
   }
-  
 
+  getToken(){
+    return this.storage.get('token')
+  }
+
+  getList(){
+    return this.http.get(this.url+'/clinics/doctor/list/', {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNGFkZTJjY2UtMTMyYi00YTQ0LThlNDItOTUxMTJjMTU5ZGRmIn0.phcLfQqEMrIMlvNwTwPMelmcg77esPM7cXYrb5KbeEQ'
+      }),
+    }).toPromise()
+  }
 }
+/*
+return this.http.get(
+                this.urlBackend + 'clinics/doctor/list/', {
+                headers: new HttpHeaders(
+                    {
+                    'Authorization': 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNGFkZTJjY2UtMTMyYi00YTQ0LThlNDItOTUxMTJjMTU5ZGRmIn0.phcLfQqEMrIMlvNwTwPMelmcg77esPM7cXYrb5KbeEQ'
+                    }
+                ),
+                } 
+            )
+
+*/
