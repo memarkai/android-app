@@ -162,7 +162,7 @@ div.maps {
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 </head>
 
-<body>
+<body onload="setScreens()">
   <app-root></app-root>
   <div class="tutorial">
     tutorial
@@ -234,19 +234,19 @@ div.maps {
     <div class="screen intro_ speciality">
       <h1>Especialidade</h1>
       <img class="bigIcon" src="assets/icon/Estetoscopio.png"/>
-      <h3>Escolha a especialidade que você quer realizar a consulta. Falta só mais uma coisa, tá quase!</h3>
+      <h3>Falta só mais uma coisa, tá quase! Escolha a(s) especialidade(s) que você quer realizar a consulta.</h3>
       <div class="bigButton">
         <a class="bigButton" href="javascript:nextScreen()">Vamos lá!</a>
       </div>
     </div>
     <div class="screen main_ speciality">
         <h1>Especialidade</h1>
-        <form action="javascript:void;" autocomplete="off"><div class="icon"><ion-icon name="search"></ion-icon></div><input class="searchSpeciality" id="specialityField" type="text" placeholder="Otorrino, Dentista, ..." oninput="searchSpeciality()"/></form>
+        <form action="javascript:void(0);" autocomplete="off"><div class="icon"><ion-icon name="search"></ion-icon></div><input class="searchSpeciality" id="specialityField" type="text" placeholder="Otorrino, Dentista, ..." oninput="searchSpeciality()"/></form>
         <div id="searchResults"></div>
         <img id="specialityEstetoscopio" class="bigIcon" src="assets/icon/Estetoscopio.png" style="opacity:0.4;"/>
-        <h3 id="specialityTip">Escolha a especialidade que você quer realizar a consulta. Falta só mais uma coisa, tá quase!</h3>
+        <h3 id="specialityTip">Escolha a(s) especialidade(s) que você quer realizar a consulta. Até 5 especialidades por vez.</h3>
         <div id="specialityConfirm" class="bigButton disabled">
-          <a class="bigButton" href="javascript:void;">Pronto!</a>
+          <a class="bigButton" href="javascript:void(0);">Pronto!</a>
         </div>
     </div>
     <div class="screen intro_ calendar">
@@ -261,7 +261,6 @@ div.maps {
       main calendar
     </div>
   </div>
-  <script>setScreens();</script>
 </body>
 
 </html>

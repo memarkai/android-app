@@ -46,8 +46,8 @@
               "src/assets/js/chat.js",
               "src/assets/js/calendar.js",
               "src/assets/js/tutorial.js",
-              "src/assets/js/specialityScreen.js",
-              "src/assets/js/specialities.js"
+              "src/assets/js/specialities.js",
+              "src/assets/js/specialityScreen.js"
             ],
             "es5BrowserSupport": true
           },
