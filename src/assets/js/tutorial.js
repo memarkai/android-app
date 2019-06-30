@@ -1,4 +1,6 @@
 var screenId = 0;
+var map, infoWindow;
+var destinationCircle;
 
 function nextScreen() {
     console.log("nextScreen");
