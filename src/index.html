@@ -153,17 +153,14 @@ div.maps {
     padding: 0;
   }
 </style>
-
   <script>
-  
-  var screens = [];
-  var specialities = [{name:"Odontologista", keywords:["Dente", "Boca", "Dentista", "Odonto", "Odontologia", "Odontologista"], icon: "assets/icon/Dente.png"},
-  {name:"Ginecologista", keywords:["Ginecologista", "Ginecologia"], icon: "assets/icon/Estetoscopio.png"},
-  {name:"Otorrino", keywords:["Ouvido", "Otorrino"], icon: "assets/icon/Estetoscopio.png"}];
-  var selectedSpecialities = [false, true];
-  var screenId = 0;
+    
+    var screens = [];
+    var specialities = [];
+    var selectedSpecialities = [false, true];
+    var screenId = 0;
   var searchResults;
-
+  
   function nextScreen() {
     console.log("nextScreen");
     if (screenId + 1 < screens.length) {
@@ -193,13 +190,13 @@ div.maps {
       document.getElementsByClassName("backButton")[0].style.visibility = "visible";
     }
   }
-
+  
   function setScreens() {
     console.log("setScreens");
     screens = document.getElementsByClassName("tutorial")[0].getElementsByClassName("screen");
     previousScreen();
   }
-
+  
   function searchSpeciality() {
     var query = document.getElementById("specialityField").value.toLowerCase();
     document.getElementById("specialityConfirm").classList.add("disabled");
@@ -231,16 +228,17 @@ div.maps {
       }
       document.getElementById("specialityConfirm").classList.remove("disabled");
       // everything is alright from here
-
+      
       // until here
     } else innerHTML = "<h3>Não achamos a especialidade. Verifique a escrita e tente novamente. :/</h3>";
     document.getElementById("searchResults").innerHTML = innerHTML;
     document.getElementById("specialityEstetoscopio").style.visibility = "hidden";
     document.getElementById("specialityTip").style.visibility = "hidden";
-
+    
   }
-
+  
   </script>
+  <script src="/assets/js/specialities.js"></script>
 
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
