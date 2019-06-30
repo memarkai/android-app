@@ -14,7 +14,7 @@ function searchSpeciality() {
     }
     var query = biggerQuery.split(" ");
     // cleaning up "e" when trying to find more than one speciality
-    if (query.length > 2) query = query.filter(function(a){return (!(a=="e") && (a.length>0));});
+    if (query.length > 1) query = query.filter(function(a){return (!(a=="e") && (a.length>0));});
     var speList = [];
     for (var i = 0; i < specialities.length; i++) {
       var found = false;
