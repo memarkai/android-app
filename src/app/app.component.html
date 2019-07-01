@@ -1,3 +1,61 @@
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
+  <div class="tutorial">
+      tutorial
+      <div class="backButton" onclick="previousScreen()"><ion-icon name="arrow-back"></ion-icon></div>
+      <div class="screen intro_ location stayVisible">
+        <h1>Localização</h1>
+        <img class="bigIcon" src="assets/icon/Location.png"/>
+        <h3>Escolha a localização aproximada de onde você quer realizar a consulta. Não se esqueça de verificar a distância de busca.</h3>
+        <div class="bigButton">
+          <a class="bigButton" href="javascript:nextScreen()">Vamos lá!</a>
+        </div>
+      </div>
+      <div class="screen main_ location">
+        <h1>Localização</h1>
+        <div class="maps"><div id="map"></div>
+      </div>
+        <h3 class="bigTip stayHidden">Escolha a localização aproximada de onde você quer realizar a consulta.</h3>
+        <h3 class="bigTip stayHidden">2 km de distância</h3>
+        <ion-item name="distance" style="width:100%; margin:0 auto;position: absolute;bottom:15%;" color = "secondary">
+            <ion-range (ionChange)="changedRange($event)" onchange="changedRange()" min="100" max="200" step="1" snaps="true" ticks="false" color = "light">
+              <ion-row>
+                 <ion-icon range-left small name="sunny"></ion-icon>
+              </ion-row>
+              <ion-row>
+                 <ion-icon range-right name="sunny"></ion-icon>
+              </ion-row> 
+           </ion-range>
+         </ion-item>
+        <div class="bigButton">
+            <a class="bigButton" href="javascript:nextScreen()">Pronto!</a>
+          </div>
+      </div>
+      <div class="screen intro_ speciality">
+        <h1>Especialidade</h1>
+        <img class="bigIcon" src="assets/icon/Estetoscopio.png"/>
+        <h3>Falta só mais uma coisa, tá quase! Escolha a especialidade que você quer realizar a consulta.</h3>
+        <div class="bigButton">
+          <a class="bigButton" href="javascript:nextScreen()">Vamos lá!</a>
+        </div>
+      </div>
+      <div class="screen main_ speciality">
+          <h1>Especialidade</h1>
+          <form action="javascript:void(0);" autocomplete="off"><div class="icon"><ion-icon name="search"></ion-icon></div><input class="searchSpeciality" id="specialityField" type="text" placeholder="Otorrino, Dentista, ..." oninput="searchSpeciality()"/></form>
+          <div id="searchResults"></div>
+          <img id="specialityEstetoscopio" class="bigIcon" src="assets/icon/Estetoscopio.png" style="opacity:0.4;"/>
+          <h3 id="specialityTip">Falta só mais uma coisa, tá quase! Escolha a especialidade que você quer realizar a consulta.</h3>
+      </div>
+      <div class="screen intro_ calendar">
+        <h1>Horários</h1>
+        <img class="bigIcon" src="assets/icon/Calendar.png"/>
+        <h3>Defina os horários em que você está disponível para as próximas consultas. Você poderá modificar depois, fique tranquilo!</h3>
+        <div class="bigButton">
+          <a class="bigButton" href="javascript:nextScreen()">Vamos lá!</a>
+        </div>
+      </div>
+      <div class="screen main_ calendar">
+        main calendar
+      </div>
+    </div>
 </ion-app>

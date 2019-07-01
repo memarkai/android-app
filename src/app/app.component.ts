@@ -4,6 +4,8 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+declare function initializeMaps(): any;
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -15,6 +17,7 @@ export class AppComponent {
     private statusBar: StatusBar
   ) {
     this.initializeApp();
+    initializeMaps();
   }
 
   initializeApp() {
@@ -22,5 +25,8 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+  changedRange( event) {
+    console.log(event.detail.value);
   }
 }
