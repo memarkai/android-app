@@ -39,11 +39,11 @@ div.intro_, div.main_ {
     visibility: hidden;
 }
 
-div.stayVisible {
+div.stayVisible, .stayVisible {
   visibility: visible;
 }
 
-div.stayHidden {
+div.stayHidden, .stayHidden {
   visibility: hidden;
 }
 img.bigIcon {
@@ -63,7 +63,7 @@ a.bigButton, a.bigButton:hover, a.bigButton:active, a.bigButton:focus {
   font-weight: bold;
 }
 div.bigButton {
-  bottom:10%;
+  bottom:4%;
   left:50%;
   transform: translateX(-50%);
   display: inline-table;
@@ -134,7 +134,16 @@ form > div.icon {
   width:100%;
 }
 div.maps {
-  height:50%;
+  top: 10%;
+  position: absolute;
+  left:0px;
+  bottom:25%;
+  right:0px;
+}
+
+h3.bigTip {
+  bottom:-4%;
+  position:absolute;
 }
 
   </style>
@@ -145,6 +154,7 @@ div.maps {
    * element that contains the map. */
   #map {
     height: 100%;
+    width: 100%;
   }
   /* Optional: Makes the sample page fill the window. */
   html, body {
@@ -196,9 +206,16 @@ div.maps {
             map: map,
             center: map.center,
             draggable: false,
-            editable: true,
+            editable: false,
             radius: 2000 // 2km
           });
+          // map.onclick = function() {
+          //   console.log(destinationCircle.map);
+          //   if (destinationCircle.map == null) {
+          //     destinationCircle.setCenter(map.getCenter());
+          //     destinationCircle.setMap(map);
+          //   }
+          // }
           map.bounds_changed = function(){
             var bNE = map.getBounds().getNorthEast();
             var bSW = map.getBounds().getSouthWest();
@@ -208,7 +225,8 @@ div.maps {
                         {lat:bSW.lat, lng:bNE.lng}];
             var area = google.maps.geometry.spherical.computeArea(bArr);
             var cArea = Math.PI*destinationCircle.radius*destinationCircle.radius;
-            console.log(cArea/area);
+            destinationCircle.setCenter(map.getCenter());
+            // console.log(cArea/area);
             /*if (cArea/area < 0.3) {
               destinationCircle.
             }*/
@@ -252,7 +270,18 @@ div.maps {
         document.body.append(loaderScript);
       </script>
     </div>
-      <h3>Escolha a localização aproximada de onde você quer realizar a consulta.</h3>
+      <h3 class="bigTip stayHidden">Escolha a localização aproximada de onde você quer realizar a consulta.</h3>
+      <h3 class="bigTip stayHidden">2 km de distância</h3>
+      <ion-item name="distance" style="width:100%; margin:0 auto;position: absolute;bottom:15%;" color = "secondary">
+          <ion-range min="100" max="200" step="1" snaps="true" ticks="false" color = "light">
+            <ion-row>
+               <ion-icon range-left small name="sunny"></ion-icon>
+            </ion-row>
+            <ion-row>
+               <ion-icon range-right name="sunny"></ion-icon>
+            </ion-row> 
+         </ion-range>
+       </ion-item>
       <div class="bigButton">
           <a class="bigButton" href="javascript:nextScreen()">Pronto!</a>
         </div>
@@ -260,7 +289,7 @@ div.maps {
     <div class="screen intro_ speciality">
       <h1>Especialidade</h1>
       <img class="bigIcon" src="assets/icon/Estetoscopio.png"/>
-      <h3>Falta só mais uma coisa, tá quase! Escolha a(s) especialidade(s) que você quer realizar a consulta.</h3>
+      <h3>Falta só mais uma coisa, tá quase! Escolha a especialidade que você quer realizar a consulta.</h3>
       <div class="bigButton">
         <a class="bigButton" href="javascript:nextScreen()">Vamos lá!</a>
       </div>
@@ -270,10 +299,7 @@ div.maps {
         <form action="javascript:void(0);" autocomplete="off"><div class="icon"><ion-icon name="search"></ion-icon></div><input class="searchSpeciality" id="specialityField" type="text" placeholder="Otorrino, Dentista, ..." oninput="searchSpeciality()"/></form>
         <div id="searchResults"></div>
         <img id="specialityEstetoscopio" class="bigIcon" src="assets/icon/Estetoscopio.png" style="opacity:0.4;"/>
-        <h3 id="specialityTip">Escolha até 5 especialidades por vez para realizar consulta.</h3>
-        <div id="specialityConfirm" class="bigButton disabled">
-          <a class="bigButton" href="javascript:void(0);">Pronto!</a>
-        </div>
+        <h3 id="specialityTip">Falta só mais uma coisa, tá quase! Escolha a especialidade que você quer realizar a consulta.</h3>
     </div>
     <div class="screen intro_ calendar">
       <h1>Horários</h1>

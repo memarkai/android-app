@@ -1,5 +1,5 @@
 var screens = [];
-var selectedSpecialities = [false, true];
+var selectedSpeciality = "";
 var searchResults;
 
 function searchSpeciality() {
@@ -39,7 +39,7 @@ function searchSpeciality() {
     var innerHTML = "";
     if (speList.length) {
       for(var i=0;i<speList.length;i++) {
-        innerHTML += "<div class=\"specialityButton\"><img class=\"icon\" src=\"" + speList[i].icon + "\"/>" + speList[i].name + "<div class=\"selector\"></div></div>";
+        innerHTML += "<div class=\"specialityButton\" onclick=\"javascript:selectSpeciality('"+speList[i].name+"')\"><img class=\"icon\" src=\"" + speList[i].icon + "\"/>" + speList[i].name + "<div class=\"selector\"></div></div>";
       }
       document.getElementById("specialityConfirm").classList.remove("disabled");
       // everything is alright from here
@@ -50,4 +50,8 @@ function searchSpeciality() {
     document.getElementById("specialityEstetoscopio").style.visibility = "hidden";
     document.getElementById("specialityTip").style.visibility = "hidden";
     
+  }
+  function selectSpeciality(spe) {
+    selectedSpeciality = spe;
+    nextScreen();
   }
