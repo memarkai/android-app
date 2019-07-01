@@ -183,8 +183,9 @@ div.maps {
         
         function initMap() {
           map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -8.0646842, lng: -34.8955189},
-            zoom : 14
+            //center: {lat: -8.0646842, lng: -34.8955189},
+            center: {lat:-8.0606528,lng:-34.8721819},
+            zoom : 12
           });
          destinationCircle = new google.maps.Circle({
             strokeColor: '#FF0000',
@@ -194,11 +195,24 @@ div.maps {
             fillOpacity: 0.35,
             map: map,
             center: map.center,
-            draggable: true,
+            draggable: false,
             editable: true,
             radius: 2000 // 2km
           });
-
+          map.bounds_changed = function(){
+            var bNE = map.getBounds().getNorthEast();
+            var bSW = map.getBounds().getSouthWest();
+            var bArr = [{lat:bNE.lat, lng:bNE.lng},
+                        {lat:bNE.lat, lng:bSW.lng},
+                        {lat:bSW.lat, lng:bSW.lng},
+                        {lat:bSW.lat, lng:bNE.lng}];
+            var area = google.maps.geometry.spherical.computeArea(bArr);
+            var cArea = Math.PI*destinationCircle.radius*destinationCircle.radius;
+            console.log(cArea/area);
+            /*if (cArea/area < 0.3) {
+              destinationCircle.
+            }*/
+          }
           // infoWindow = new google.maps.InfoWindow;
 
         // Try HTML5 geolocation.
