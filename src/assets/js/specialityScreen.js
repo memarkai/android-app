@@ -5,7 +5,6 @@ var searchResults;
 function searchSpeciality() {
     if (specialities == null) return;
     var biggerQuery = document.getElementById("specialityField").value.toLowerCase();
-    document.getElementById("specialityConfirm").classList.add("disabled");
     if (biggerQuery.length == 0) {
       document.getElementById("searchResults").innerHTML = "";
       document.getElementById("specialityEstetoscopio").style.visibility = "inherit";
@@ -41,7 +40,6 @@ function searchSpeciality() {
       for(var i=0;i<speList.length;i++) {
         innerHTML += "<div class=\"specialityButton\" onclick=\"javascript:selectSpeciality('"+speList[i].name+"')\"><img class=\"icon\" src=\"" + speList[i].icon + "\"/>" + speList[i].name + "<div class=\"selector\"></div></div>";
       }
-      document.getElementById("specialityConfirm").classList.remove("disabled");
       // everything is alright from here
       
       // until here
