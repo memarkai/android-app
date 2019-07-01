@@ -8,7 +8,8 @@ declare function initializeMaps(): any;
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
+  styleUrls: ['tutorial.component.scss']
 })
 export class AppComponent {
   constructor(
